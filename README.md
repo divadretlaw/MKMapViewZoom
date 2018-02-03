@@ -1,34 +1,31 @@
-# About MKMapView category
-The included MKMapView category for supporting zoom level, code belongs to Troy Brant
+# MKMapView
+
+The included MKMapView extension for supporting zoom level, code belongs to Troy Brant
 http://troybrant.net/blog/2010/01/mkmapview-and-zoom-levels-a-visual-guide/
 
 If you have ever built a web application using the Google Maps API, you are likely intimately familiar with this line of code:
-
-map.setCenter(new google.maps.LatLng(37.4419, -122.1419), 13);
-To implement this you can use the attached category. 
+`map.setCenter(new google.maps.LatLng(37.4419, -122.1419), 13);`
 
 Simply import "MKMapView+ZoomLevel.swift" to your project. 
 
+## Example
 
-# Example
+```swift
+let coordinate = CLLocationCoordinate2D(latitude: 37.4419, longitude: -122.1419)
+mapView.setCenter(coordinate: coordinate, zoomLevel: 17.0, animated: true)
+```
 
-
-	let c = CLLocationCoordinate2D(latitude: 37.4419, longitude: -122.1419)
-    mapView.setCenterCoordinate(c, zoomLevel: 13, animated: true)
-
-
-
-# Note
+## Note
 To get the current zoom level 
 
-	let level = mapView.getZoomLevel()
+```swift
+let level = mapView.zoomLevel
+```
 
-
-# Questions
+## Questions
 http://troybrant.net/blog/2010/01/set-the-zoom-level-of-an-mkmapview/
 
-
-# License
+## License
 Copyright (c) 2010 Troy Brant
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
